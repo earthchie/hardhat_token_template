@@ -1,5 +1,51 @@
+# วิธีใช้
+Scroll down for English
+
+1. เปลี่ยนชื่อไฟล์ `./contracts/TokenName.sol` เป็นชื่อเหรียญที่ต้องการ
+   เช่นชื่อเหรียญ `Durian` ก็แก้เป็น `./contracts/Durian.sol`
+2. แก้ `./contracts/Durian.sol` บรรทัดที่ #339 แก้ `{{TokenName}}` เป็น `Durian`
+
+เช่น จาก
+```
+contract {{TokenName}} is Context, IBEP20, Ownable {
+```
+แก้เป็น
+```
+contract Durian is Context, IBEP20, Ownable {
+```
+3. แก้บรรทัดที่ #352-#355 ตามต้องการ
+
+เช่น
+```
+_name = "{{Token Name}}";
+_symbol = "{{Token Symbol}}";
+_decimals = 18;
+_totalSupply = 100_000_000 * 1e18;
+```
+
+เป็น
+```
+_name = "Durian";
+_symbol = "DUR";
+_decimals = 18;
+_totalSupply = 100_000_000 * 1e18;
+```
+
+4. บันทึก `./contracts/Durian.sol`
+5. แก้ไฟล์ `./scripts/deploy.js` บรรทัดที่ #6 เป็นชื่อเหรียญ
+6. แก้ไฟล์ `./hardhat.config.js` บรรทัดที่ #3 เป็น mnemonic ของกระเป๋าที่จะใช้ deploy contract
+7. เช็คบรรทัดที่ #15 ให้แน่ใจว่ามี network ที่ต้องการ deploy อยู่ในนั้นแล้ว
+8. ที่ root directory ของ repo พิมพ์คำสั่ง
+
+```bash
+npm install
+npx hardhat compile --network thaichain
+npx hardhat run --network thaichain scripts/deploy.js
+```
+แก้ network เป็นอันที่ต้องการได้เลย
+
+
 # Usage
-ภาษาไทย เลื่อนลงไปด้านล่าง
 
 
 1. Rename `./contracts/TokenName.sol` to the name of your token. 
@@ -45,47 +91,3 @@ npx hardhat run --network thaichain scripts/deploy.js
 ```
 Please change network to your target network.
 
-# วิธีใช้
-
-1. เปลี่ยนชื่อไฟล์ `./contracts/TokenName.sol` เป็นชื่อเหรียญที่ต้องการ
-   เช่นชื่อเหรียญ `Durian` ก็แก้เป็น `./contracts/Durian.sol`
-2. แก้ `./contracts/Durian.sol` บรรทัดที่ #339 แก้ `{{TokenName}}` เป็น `Durian`
-
-เช่น จาก
-```
-contract {{TokenName}} is Context, IBEP20, Ownable {
-```
-แก้เป็น
-```
-contract Durian is Context, IBEP20, Ownable {
-```
-3. แก้บรรทัดที่ #352-#355 ตามต้องการ
-
-เช่น
-```
-_name = "{{Token Name}}";
-_symbol = "{{Token Symbol}}";
-_decimals = 18;
-_totalSupply = 100_000_000 * 1e18;
-```
-
-เป็น
-```
-_name = "Durian";
-_symbol = "DUR";
-_decimals = 18;
-_totalSupply = 100_000_000 * 1e18;
-```
-
-4. บันทึก `./contracts/Durian.sol`
-5. แก้ไฟล์ `./scripts/deploy.js` บรรทัดที่ #6 เป็นชื่อเหรียญ
-6. แก้ไฟล์ `./hardhat.config.js` บรรทัดที่ #3 เป็น mnemonic ของกระเป๋าที่จะใช้ deploy contract
-7. เช็คบรรทัดที่ #15 ให้แน่ใจว่ามี network ที่ต้องการ deploy อยู่ในนั้นแล้ว
-8. ที่ root directory ของ repo พิมพ์คำสั่ง
-
-```bash
-npm install
-npx hardhat compile --network thaichain
-npx hardhat run --network thaichain scripts/deploy.js
-```
-แก้ network เป็นอันที่ต้องการได้เลย
