@@ -49,7 +49,7 @@ Please change network to your target network.
 
 1. เปลี่ยนชื่อไฟล์ `./contracts/TokenName.sol` เป็นชื่อเหรียญที่ต้องการ
    เช่นชื่อเหรียญ `Durian` ก็แก้เป็น `./contracts/Durian.sol`
-2. แก้ `./contracts/Durian.sol` บรรทัดที่ #339 แก้ `{{TokenName}}` เป็็น `Durian`
+2. แก้ `./contracts/Durian.sol` บรรทัดที่ #339 แก้ `{{TokenName}}` เป็น `Durian`
 
 เช่น จาก
 ```
