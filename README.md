@@ -80,7 +80,7 @@ _totalSupply = 100_000_000 * 1e18;
 4. บันทึก `./contracts/Durian.sol`
 5. แก้ไฟล์ `./scripts/deploy.js` บรรทัดที่ #6 เป็นชื่อเหรียญ
 6. แก้ไฟล์ `./hardhat.config.js` บรรทัดที่ #3 เป็น mnemonic ของกระเป๋าที่จะใช้ deploy contract
-7. เช็คบรรทัดที่ #15 ให้แน่ใจว่ามี network ที่ต้องการ deploy อยู่ในนั้นแล้้ว
+7. เช็คบรรทัดที่ #15 ให้แน่ใจว่ามี network ที่ต้องการ deploy อยู่ในนั้นแล้ว
 8. ที่ root directory ของ repo พิมพ์คำสั่ง
 
 ```bash
